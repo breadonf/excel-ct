@@ -1,10 +1,11 @@
-import SickIcon from "@mui/icons-material/Sick";
 import { Grid, Typography } from "@mui/material";
-import React from "react";
+
 import Checkbox from "../../FormsUI/Checkbox";
+import React from "react";
+import SickIcon from "@mui/icons-material/Sick";
 import Textfield from "../../FormsUI/Textfield";
 
-function PatientDetail({ data }) {
+function PatientDetail({ formik }) {
   return (
     <Grid container spacing={2} component={"div"} sx={{ py: 5 }}>
       <Grid item xs={12}>
@@ -13,7 +14,14 @@ function PatientDetail({ data }) {
         </Typography>
       </Grid>
       <Grid item xs={4}>
-        <Textfield name="PID" label="Patient ID (e.g. A1234567)"></Textfield>
+        <Textfield
+          name="PID"
+          label="Patient ID (e.g. A1234567)"
+          onChange={(event) => {
+            console.log("trimming")
+            formik.setFieldValue("PID", event.target.value.trim());
+          }}
+        ></Textfield>
       </Grid>
       <Grid item xs={5}>
         <Textfield

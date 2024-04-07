@@ -54,6 +54,7 @@ function RoutineForm({ data, handleSubmit, records }) {
               initialValues={data ? data : INITIAL_FORM_STATE}
               validationSchema={FORM_VALIDATION}
               onSubmit={handleSubmit}
+
             >
               {(formik) => (
                 <Form>
@@ -66,7 +67,7 @@ function RoutineForm({ data, handleSubmit, records }) {
                           height: "85vh",
                           bgcolor: "#F0F3BD",
                           overflowY: "auto",
-                          
+
                         }}
                       >
                         <Grid item xs={12}>
@@ -78,7 +79,7 @@ function RoutineForm({ data, handleSubmit, records }) {
                             Routine Case Log Form
                           </Typography>
                         </Grid>
-                        <PatientDetail />
+                        <PatientDetail formik={formik}/>
                         <ExamDetail
                           data={data}
                           sedation={sedation}

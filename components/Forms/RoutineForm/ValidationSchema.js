@@ -4,7 +4,9 @@ import IsHKID from "/helpers/isHKID";
 
 const FORM_VALIDATION = yup.object().shape({
   PID: yup
-    .string()
+    .string().transform((value, originalValue) => {
+      return value !== null ? value.trim() : value;
+    })
     .test("is-HKID", "Not a valid HKID", (value) => IsHKID(value))
     .required("Required"),
   inPatient: yup.boolean(),

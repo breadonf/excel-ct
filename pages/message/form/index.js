@@ -65,7 +65,7 @@ function MessageFormPage() {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
-      <Container maxWidth="lg" sx={{ height: "90vh" }}>
+      <Container maxWidth="lg" sx={{ height: "90vh", pt:4 }}>
         <MessageForm handleSubmit={handleSubmit} />
       </Container>
     </>

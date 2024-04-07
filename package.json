@@ -1,7 +1,7 @@
 {
   "name": "ct-logging-system-frontend",
   "private": true,
-  "version": "1.75",
+  "version": "1.77",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -41,7 +41,7 @@
     "react-error-boundary": "^3.1.4",
     "react-hot-toast": "^2.3.0",
     "react-query": "^3.34.12",
-    "yup": "^0.32.11"
+    "yup": "^1.3.2"
   },
   "devDependencies": {
     "@welldone-software/why-did-you-render": "^7.0.1",

@@ -33,6 +33,7 @@ const INITIAL_FORM_STATE = {
   IR: false,
   ROI: "",
 };
+
 export class FormState {
   constructor(radiologists, nurses, radiographers) {
     this.PID = "";

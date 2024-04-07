@@ -9,7 +9,9 @@ import Container from "@mui/material/Container";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import WithPaperWrapper from "../components/Forms/WithPaperWrapper";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/router";
 
@@ -41,66 +43,84 @@ function SignIn({ csrfToken }) {
   };
 
   return (
-    <WithPaperWrapper>
-      <Container maxWidth="xs">
-        <Box
+    <Grid container>
+      <Grid item xs={12}>
+        <Container
+          maxWidth="xs"
           sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            height: "85vh",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
           <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
+            sx={{
+              marginTop: 8,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
           >
-            <TextField
-              type="hidden"
-              name="csrfToken"
-              defaultValue={csrfToken}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+            <Paper
+              elevation={12}
+              sx={{
+                p: 3,
+                height: "85vh",
+                bgcolor: "#F0F3BD",
+                overflowY: "auto",
+                height:"60vh"
+              }}
             >
-              Sign In
-            </Button>
+              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+                <LockOutlinedIcon />
+              </Avatar>
+              <Typography component="h1" variant="h5">
+                Sign in
+              </Typography>
+              <Box
+                component="form"
+                onSubmit={handleSubmit}
+                noValidate
+                sx={{ mt: 1 }}
+              >
+                <TextField
+                  type="hidden"
+                  name="csrfToken"
+                  defaultValue={csrfToken}
+                />
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                  autoFocus
+                />
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
+                  Sign In
+                </Button>
+              </Box>
+            </Paper>
           </Box>
-        </Box>
-      </Container>
-    </WithPaperWrapper>
+        </Container>
+      </Grid>
+    </Grid>
   );
 }
 

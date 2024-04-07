@@ -4,7 +4,7 @@ import React from "react";
 
 // TODO Discuss changing
 // TODO the index page to redirecting to message board to enhance handover
-function index() {
+function Index() {
   return (
     <>
       <Head>
