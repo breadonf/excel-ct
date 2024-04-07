@@ -4,9 +4,9 @@
     {
       "label": "Frontend",
       "type": "shell",
-      "command": "pnpm dev",
+      "command": "bun run dev",
       "windows": {
-        "command": "pnpm dev"
+        "command": "bun run dev"
       },
       "presentation": {
         "reveal": "silent",

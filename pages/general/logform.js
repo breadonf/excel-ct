@@ -3,17 +3,17 @@ import { useMutation, useQuery } from "react-query";
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
 import Head from "next/head";
-import INITIAL_FORM_STATE from "../../components/Forms/RoutineForm/InitialFormState";
+import { useRouter } from "next/router";
 import React from "react";
+import { toast } from "react-hot-toast";
+import useSessionStorage from "~/hooks/useSessionStorage";
 import RoutineForm from "../../components/Forms/RoutineForm";
-import { createCTrecord } from "../../queries/mutations";
-import { getHomepageCTUnlimited } from "../../queries/queries";
+import INITIAL_FORM_STATE from "../../components/Forms/RoutineForm/InitialFormState";
 import initializer from "../../helpers/initializer";
 import preprocessor from "../../helpers/preprocessor";
 import setData from "../../helpers/setData";
-import { toast } from "react-hot-toast";
-import { useRouter } from "next/router";
-import useSessionStorage from "~/hooks/useSessionStorage";
+import { createCTrecord } from "../../queries/mutations";
+import { getHomepageCTUnlimited } from "../../queries/queries";
 
 function RoutineCases() {
   const router = useRouter();
@@ -42,7 +42,6 @@ function RoutineCases() {
     setSessionData(sessionDataFromSubmission);
     const modifiedValues = preprocessor(values);
     await new Promise((r) => setTimeout(r, 500));
-
     mutation.mutate(
       { ...modifiedValues },
       {

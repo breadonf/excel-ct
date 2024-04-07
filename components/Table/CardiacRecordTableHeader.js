@@ -10,7 +10,6 @@ export const RecordTableHeaders = [
     headerName: "",
     field: "actions",
     type: "actions",
-
     width: 100,
     getActions: (params) => [
       <Link key="1" passHref href={`/cardiac/protocol/${params.id}`}>
