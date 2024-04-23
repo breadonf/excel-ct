@@ -10,7 +10,7 @@ export const WorklistTableHeader = [
     type: "actions",
     width: 120,
     getActions: (params) => [
-      <Link key="1" href={`/exam/${params.id}`}>
+      <Link key="1" href={`/general/${params.id}`}>
         <a>
           <Tooltip title="View exam detail">
             <PageviewIcon />

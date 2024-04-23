@@ -7,13 +7,13 @@ import { useRouter } from "next/router";
 import React from "react";
 import { toast } from "react-hot-toast";
 import useSessionStorage from "~/hooks/useSessionStorage";
-import RoutineForm from "../../components/Forms/RoutineForm";
-import INITIAL_FORM_STATE from "../../components/Forms/RoutineForm/InitialFormState";
-import initializer from "../../helpers/initializer";
-import preprocessor from "../../helpers/preprocessor";
-import setData from "../../helpers/setData";
-import { createCTrecord } from "../../queries/mutations";
-import { getHomepageCTUnlimited } from "../../queries/queries";
+import RoutineForm from "@/Forms/RoutineForm";
+import INITIAL_FORM_STATE from "@/Forms/RoutineForm/InitialFormState";
+import initializer from "~/helpers/initializer";
+import preprocessor from "~/helpers/preprocessor";
+import setData from "~/helpers/setData";
+import { createCTrecord } from "~/queries/mutations";
+import { getHomepageCTUnlimited } from "~/queries/queries";
 
 function RoutineCases() {
   const router = useRouter();
